@@ -2,7 +2,7 @@
 ## Installation
 ```
 git clone git@github.com:the-real-finnventor/insult.git
-cd insult
+echo alias insult="$PWD"/insult/insult >> ~/.zprofile
 ```
 
 If you are getting errors like:
@@ -18,10 +18,10 @@ and the repository exists.
 Then try:
 ```
 git clone https://github.com/the-real-finnventor/insult.git
-cd insult
+echo alias insult="$PWD"/insult/insult >> ~/.zprofile
 ```
 
-## Run
+## Run (at any time open a terminal and run)
 ```
-python3 insult.py
+insult
 ```
