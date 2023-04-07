@@ -1,6 +1,7 @@
 # Quickstart
 ## Installation
 ```
+pip3 install pyyaml
 git clone git@github.com:the-real-finnventor/insult.git
 echo alias insult="$PWD"/insult/insult >> ~/.zprofile
 ```
