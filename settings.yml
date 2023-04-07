@@ -9,3 +9,5 @@ insults:
   - "{name}, I’m busy right now, can I ignore you another time?"
   - "{name}'s secrets are always safe with me. I never even listen when they tell me them."
 voice: Daniel
+slay_mode: False
+burn_mode: False
