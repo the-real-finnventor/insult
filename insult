@@ -3,6 +3,15 @@
 import subprocess
 import sys
 import random
+import yaml
+
+
+def read_settings():
+   # Find out which path this script is in
+   path = sys.path[0]
+   # Read settings.yml
+   with open(f'{path}/settings.yml','r') as settings:
+      return list(yaml.safe_load_all(settings))[0]
 
 
 # Check if the user specified who to insult
@@ -13,33 +22,27 @@ if len(sys.argv) == 1:
 name = sys.argv[1].title()
 
 
+# Run the read_settings function
+settings = read_settings()
+
+
 # Create a list of insults
-insults = [
-   f"If there is a zobie apocalypse, {name}, you don't have to worry. They only want people with brains.",
-   f"{name}, you're so ugly, you scared the crap out of the toilet.",
-   f"{name}, you're the reason they have the middle finger.",
-   f"{name} has dog poop on there shoe but it blends in because it looks exactly like them.",
-   f"Someday {name} will go far. And I really hope they stay there",
-   f"Remember that time {name} was saying that thing I didn’t care about? Yeah, that is now",
-   f"{name} is so ugly, they have to trick or treat over the phone",
-   f"{name}, I’m busy right now, can I ignore you another time?",
-   f"{name}'s secrets are always safe with me. I never even listen when they tell me them.",
-]
+insults = settings['insults']
 
 
 # Choose a random insult
 random.seed()
-insult = random.choice(insults)
+insult = random.choice(insults).format(name = name)
 
 
 
 # Check if the user specified a voice
 if len(sys.argv) == 3:
+   # Set the voice if the user specified one
    voice = sys.argv[2]
-
-   # Speak the insult if the user specified a voice
-   subprocess.run(['say', '-v', voice, insult])
-
-# Speak the insult if the user did not specify a voice
 else:
-   subprocess.run(['say', insult])
+   # Set the voice to the default if the user didn't specify one
+   voice = settings['voice']
+
+
+subprocess.run(['say', '-v', voice, insult])
