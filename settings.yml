@@ -8,6 +8,9 @@ insults:
   - "{name} is so ugly, they have to trick or treat over the phone"
   - "{name}, I’m busy right now, can I ignore you another time?"
   - "{name}'s secrets are always safe with me. I never even listen when they tell me them."
+  - "Some babies were dropped on their heads but {name} was clearly thrown at a wall"
+  - "Calling you an idiot would be an insult to all the stupid people"
 voice: Daniel
 slay_mode: False
 burn_mode: False
+sucker_mode: False
