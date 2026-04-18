@@ -30,7 +30,7 @@ default_sucker_mode = settings['sucker_mode']
 parser = argparse.ArgumentParser(description='Insult someone')
 parser.add_argument('name', help='The name of the person to insult', nargs='?')
 parser.add_argument('-v', '--voice', help='The voice to use', required=False, default=default_voice)
-parser.add_argument('-sl', '--slay', help='Add "slay" to the end', required=False, action='store_true', default = default_slay_mode)
+parser.add_argument('-s', '--slay', help='Add "slay" to the end', required=False, action='store_true', default = default_slay_mode)
 parser.add_argument('-b', '--burn', help='Add "burn" to the end', required=False, action='store_true', default = default_burn_mode)
 parser.add_argument('-su', '--sucker', help='Add "sucker" to the end', required=False, action='store_true', default = default_slay_mode)
 parser.add_argument('-l', '--list', help='List the available voices', required=False, action='store_true')
